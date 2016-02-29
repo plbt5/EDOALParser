@@ -1,0 +1,37 @@
+corresp ::= 
+<Cell {rdf:about=" URI "} /> 
+	<entity1> entity </entity1> 
+	<entity2> entity </entity2> 
+	<relation> STRING </relation> 
+	<measure> STRING </measure> 
+	(<transformation> transformation </transformation>)* 
+	(<linkkey> linkkey </linkkey>)* 
+</Cell>
+
+
+ns ::= word
+id ::= word
+colon ::= ':'
+hook_l ::= '<'
+hook_r ::= '>'
+slash ::= '/'
+identifier ::= (ns colon)+ keyword
+start_lbl ::= hook_l identifier parameter_assign* hook_r
+end_lbl ::= hook_l slash identifier hook_r
+empty_lbl ::= hook_l identifier parameter_assign* hook_r slash
+label ::= empty_lbl | start_lbl contents end_lbl    # Hier nog toevoegen dat start en end hetzelfde label hebben
+
+keyword ::= "Cell" | "entity1" | "entity2" | "relation" | "measure" | "transformation" | "linkkey" 
+
+corresp ::= cell 
+cell ::= entity1 entity2 relation measure transformation* linkkey*
+
+EXAMPLE:
+<align:Cell>
+	<align:entity1><edoal:Class rdf:about="http://www.example.org/ontology1#entity1" /></align:entity1>
+	<align:entity2><edoal:Class rdf:about="http://www.example.org/ontology2#entity2" /></align:entity2> 
+	<align:relation>=</align:relation> 
+	<align:measure rdf:datatype="&xsd;float">1.0</align:measure> 
+	<edoal:transformation>...</edoal:transformation> 
+	<edoal:linkkey>...</edoal:linkkey> 
+</align:Cell>

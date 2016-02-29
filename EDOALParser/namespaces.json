@@ -1,0 +1,10 @@
+{
+	  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+	  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+	  "xmlns": "http://knowledgeweb.semanticweb.org/heterogeneity/alignment#",
+	  "dc": "http://purl.org/dc/elements/1.1/",
+	  "edoal": "http://ns.inria.org/edoal/1.0/#",
+	  "base": "http://oms.omwg.org/wine-vin/",
+	  "wine": "http://www.w3.org/TR/2003/CR-owl-guide-20030818/wine#",
+	  "vin": "http://ontology.deri.org/vin#"
+}
